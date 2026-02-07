@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Rose Day Soumu 🌹</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+section {
+    height: 100vh;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+h1 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 12px 22px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    background: white;
+    color: #d6336c;
+    margin-top: 10px;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+.quote {
+    display: none;
+    margin-top: 20px;
+    font-style: italic;
+    font-size: 1.3rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    margin-top: 25px;
+    font-weight: bold;
+}
+
+/* Floating hearts */
+.heart {
+    position: fixed;
+    color: pink;
+    font-size: 20px;
+    animation: float 6s linear infinite;
+    opacity: 0.7;
+}
+
+@keyframes float {
+    0% { transform: translateY(100vh); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateY(-10vh); opacity: 0; }
+}
+
+/* Falling roses */
+.rose {
+    position: fixed;
+    font-size: 24px;
+    animation: fall 8s linear infinite;
+}
+
+@keyframes fall {
+    0% { transform: translateY(-10vh); }
+    100% { transform: translateY(110vh); }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Background Music -->
+<audio autoplay loop>
+    <source src="https://cdn.pixabay.com/audio/2022/02/23/audio_4c7a77c9d2.mp3" type="audio/mpeg">
+</audio>
+
+<!-- PAGE 1 -->
+<section style="background:#b11226;">
+<h1>🌹 Riddle 1</h1>
+<p>I bloom once but stay forever, I have no thorns yet I still hurt when I’m missing.</p>
+<button onclick="showQuote('q1')">Reveal 💖</button>
+<p id="q1" class="quote">“Love stays even when words disappear.” — Shaby ❤️</p>
+<a href="#p2">Next ➝</a>
+</section>
+
+<!-- PAGE 2 -->
+<section id="p2" style="background:#7a1631;">
+<h1>🌹 Riddle 2</h1>
+<p>I’m silent but loud, invisible yet felt.</p>
+<button onclick="showQuote('q2')">Reveal 💕</button>
+<p id="q2" class="quote">“Soumu, you’re my calm and my chaos.” 🌹</p>
+<a href="#p3">Next ➝</a>
+</section>
+
+<!-- PAGE 3 -->
+<section id="p3" style="background:#c9184a;">
+<h1>🌹 Riddle 3</h1>
+<p>I happen every time I see you.</p>
+<button onclick="showQuote('q3')">Reveal 💞</button>
+<p id="q3" class="quote">“My heart chose you without asking me.” 💗</p>
+<a href="#p4">Next ➝</a>
+</section>
+
+<!-- PAGE 4 -->
+<section id="p4" style="background:#ff4d6d;">
+<h1>🌹 Riddle 4</h1>
+<p>I grow stronger with time and distance.</p>
+<button onclick="showQuote('q4')">Reveal 💓</button>
+<p id="q4" class="quote">“Love like ours doesn’t fade.” 🌸</p>
+<a href="#p5">Next ➝</a>
+</section>
+
+<!-- PAGE 5 -->
+<section id="p5" style="background:#ff758f;">
+<h1>🌹 Riddle 5</h1>
+<p>I’m not perfect, but I’m always yours.</p>
+<button onclick="showQuote('q5')">Reveal 💗</button>
+<p id="q5" class="quote">“If loving you is wrong, I don’t want right.” 💋</p>
+<a href="#p6">Next ➝</a>
+</section>
+
+<!-- FINAL -->
+<section id="p6" style="background:#ff8fab;">
+<h1>🌹 Hey Soumu…</h1>
+<p>
+Hey! Soumu it's me Dumbo this one is not AI 😂 and i want to say Happy Rose Day bebuu  
+and like this I'll always find different ways to propose you till....ig 3011 🤔  
+Anyway I Love you bebuu and Happy Rose Day 💋
+</p>
+<p><b>— Yours always, Shaby ❤️🌹</b></p>
+</section>
+
+<script>
+function showQuote(id){
+    document.getElementById(id).style.display="block";
+}
+
+// Hearts
+setInterval(()=>{
+    let h=document.createElement("div");
+    h.className="heart";
+    h.innerHTML="💖";
+    h.style.left=Math.random()*100+"vw";
+    document.body.appendChild(h);
+    setTimeout(()=>h.remove(),6000);
+},700);
+
+// Roses
+setInterval(()=>{
+    let r=document.createElement("div");
+    r.className="rose";
+    r.innerHTML="🌹";
+    r.style.left=Math.random()*100+"vw";
+    document.body.appendChild(r);
+    setTimeout(()=>r.remove(),8000);
+},900);
+</script>
+
+</body>
+</html>
